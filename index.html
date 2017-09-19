@@ -1,11 +1,123 @@
-<html>
+<!-- <html>
 <head>
 <script type="text/javascript">
 //window.location = "https://lyne.io";
 </script>
+<script type="text/javascript">
+    
+    var player = jwplayer('player');
+    
+    player.setup({
+        playlist: [{
+          file: "//content.jwplatform.com/videos/QlfSn2u6-FctPAkow.mp4",
+          image: "//content.jwplatform.com/thumbs/QlfSn2u6-1280.jpg",
+          title: "Mountain Clouds",
+          mediaid: "QlfSn2u6"
+          },
+          {
+          file: "//content.jwplatform.com/videos/1b02B03R-FctPAkow.mp4",
+          image: "//content.jwplatform.com/thumbs/1b02B03R-1280.jpg",
+          title: "Whiskey Tumbler",
+          mediaid: "1b02B03R"
+          }],
+        width: '480',
+        height: '270',
+        advertising: {
+          client: 'googima',
+          offset: 'pre',
+          tag: 'https://pubads.g.doubleclick.net/gampad/ads?sz=640x360&iu=/6062/iab_vast_samples/skippable&ciu_szs=300x250,728x90&impl=s&gdfp_req=1&env=vp&output=xml_vast2&unviewed_position_start=1&url=[referrer_url]&correlator=[timestamp]',
+        }
+      });
+    
+    </script>
 </head>
 <body>
         <iframe frameborder="0" id="cnnvideo_354edbc2" name="cnnvideo_354edbc2" width="100%" height="100%" src="//d3m3euvzbw7zc0.cloudfront.net/iframeclient_2.6.html?debug=false&amp;frameId=cnnvideo_354edbc2&amp;cvpAdPolicyContext=van&amp;adKeyValues%5B0%5D%5Bkey%5D=playlocalads&amp;adKeyValues%5B0%5D%5Bvalue%5D=false&amp;type=iframe_client&amp;section=affiliates&amp;width=100%25&amp;height=100%25&amp;adsection=cnn.com_vanaffiliates_tribunecompany_kcpq&amp;autostart=false&amp;network=cnn&amp;video=justice%2F2017%2F09%2F19%2Ffugitive-mother-captured-the-hunt-maria.hln&amp;profile=van&amp;context=kcpq&amp;thumb=http%3A%2F%2Fi2.cdn.turner.com%2Fcnn%2Fdam%2Fassets%2F170919025309-fugitive-mother-captured-the-hunt-maria-00010006-exlarge-tease.jpg&amp;apiVersion=1.3.7&amp;client=van#http%3A%2F%2Fq13fox.com%2F2017%2F09%2F19%2Fpennsylvania-woman-accused-of-abducting-son-found-in-washington-after-tv-show-airs%2F" scrolling="no"></iframe>
-    <!--<iframe href="http://d3qdvdoj7f5y45.cloudfront.net/creative/?platform=ios&adx=cox&clickid=5_cox_8f2f87d3_1505257925_24cba8e5e90111cd226add912c3aa154&pubid=1cox_2121234255&ctype=2">-->
+    <!--<iframe href="http://d3qdvdoj7f5y45.cloudfront.net/creative/?platform=ios&adx=cox&clickid=5_cox_8f2f87d3_1505257925_24cba8e5e90111cd226add912c3aa154&pubid=1cox_2121234255&ctype=2">--
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Video.js VAST Example</title>
+
+  <link href="http://vjs.zencdn.net/4.7.1/video-js.css" rel="stylesheet">
+  <link href="lib/videojs-contrib-ads/videojs.ads.css" rel="stylesheet" type="text/css">
+  <link href="videojs.vast.css" rel="stylesheet" type="text/css">
+
+  <style type="text/css">
+    .description {
+      background-color:#eee;
+      border: 1px solid #777;
+      padding: 10px;
+      font-size: .8em;
+      line-height: 1.5em;
+      font-family: Verdana, sans-serif;
+    }
+    .example-video-container {
+      display: inline-block;
+    }
+  </style>
+  <!--[if lt IE 9]><script src="lib/es5.js"></script><![endif]-->
+  <script src="http://vjs.zencdn.net/4.7.1/video.js"></script>
+  <script src="lib/videojs-contrib-ads/videojs.ads.js"></script>
+
+  <script src="lib/vast-client.js"></script>
+  <script src="videojs.vast.js"></script>
+</head>
+<body>
+  <p class="description">Video.js VAST plugin examples.</p>
+
+  <div class="example-video-container">
+    <p class="description">No autoplay.</p>
+
+    <video id="vid1" class="video-js vjs-default-skin" controls preload="auto"
+        poster="http://video-js.zencoder.com/oceans-clip.png"
+        data-setup='{}'
+        width='640'
+        height='400'
+        >
+      <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4'>
+      <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm'>
+      <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg'>
+      <p>Video Playback Not Supported</p>
+    </video>
+  </div>
+
+  <div class="example-video-container">
+    <p class="description">With autoplay.</p>
+
+    <video id="vid2" class="video-js vjs-default-skin" autoplay controls preload="auto"
+        poster="http://video-js.zencoder.com/oceans-clip.png"
+        data-setup='{}'
+        width='640'
+        height='400'
+        >
+      <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4'>
+      <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm'>
+      <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg'>
+      <p>Video Playback Not Supported</p>
+    </video>
+  </div>
+
+  <script>
+    var vid1 = videojs('vid1'),
+        vid2 = videojs('vid2');
+
+    vid1.muted(true);
+    vid1.ads();
+    vid1.vast({
+      url: 'http://videoads.theonion.com/vast/270.xml'
+    });
+
+    vid2.muted(true);
+    vid2.ads();
+    vid2.vast({
+      url: 'http://videoads.theonion.com/vast/270.xml'
+    });
+  </script>
+
 </body>
 </html>
